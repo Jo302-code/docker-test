@@ -1,7 +1,7 @@
-FROM php:8.4-cli-alpine
+FROM php:8.3-cli
 
-WORKDIR /var/www
+WORKDIR /app
 
 COPY . .
 
-CMD ["php", "-S", "0.0.0.0:8000", "-t", "."]
+CMD ["sh", "-c", "php -S 0.0.0.0:${PORT:-8000} -t /app"]
